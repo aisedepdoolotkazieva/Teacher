@@ -1287,12 +1287,7 @@ body {
   width: 12px;
   height: 20px;
   border-radius: 80% 15% 70% 25%;
-  background: linear-gradient(
-    135deg,
-    #e5c783,
-    #a94c50 70%,
-    #57202b
-  );
+  background: linear-gradient(135deg, #e5c783, #a94c50 70%, #57202b);
   opacity: 0;
   box-shadow: 0 0 8px #c8a85b30;
   animation: petal-fall linear infinite;
@@ -1302,23 +1297,20 @@ body {
 @keyframes petal-fall {
   0% {
     opacity: 0;
-    transform: translate3d(0, -5vh, 0)
-      rotate(0deg);
+    transform: translate3d(0, -5vh, 0) rotate(0deg);
   }
   10% {
     opacity: 0.65;
   }
   50% {
-    transform: translate3d(45px, 50vh, 0)
-      rotate(220deg);
+    transform: translate3d(45px, 50vh, 0) rotate(220deg);
   }
   90% {
     opacity: 0.5;
   }
   100% {
     opacity: 0;
-    transform: translate3d(-25px, 110vh, 0)
-      rotate(480deg);
+    transform: translate3d(-25px, 110vh, 0) rotate(480deg);
   }
 }
 
@@ -1333,22 +1325,24 @@ body {
    TEACHERS GIF / PHOTO FRAME
    ========================================== */
 .teachers-photo-frame {
-    position: relative;
-    max-width: 520px;
-    width: 90%;
-    margin: 25px auto;
-    border-radius: 16px;
-    padding: 6px;
-    /* Золотой градиент рамки */
-    background: linear-gradient(135deg, #D4AF37 0%, #4A0E17 50%, #FFD700 100%);
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.25);
-    z-index: 2;
+  position: relative;
+  max-width: 520px;
+  width: 90%;
+  margin: 25px auto;
+  border-radius: 16px;
+  padding: 6px;
+  /* Золотой градиент рамки */
+  background: linear-gradient(135deg, #d4af37 0%, #4a0e17 50%, #ffd700 100%);
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(212, 175, 55, 0.25);
+  z-index: 2;
 }
 
 .teachers-gif {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 12px;
-    object-fit: cover;
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  object-fit: cover;
 }
