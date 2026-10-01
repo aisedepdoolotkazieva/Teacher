@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="ky">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,maximum-skalable=1.0, user-scalable=no"
+    />
+    <title>Мугалимдер күнү — «Манас» жатак-мектеби</title>
+    <meta
+      name="description"
+      content="«Манас» жатак мектебинин Мугалимдер күнүнө арналган салтанаттуу интерактивдүү чакыруусу"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas id="gold-particles"></canvas>
+    <div id="falling-petals" aria-hidden="true"></div>
+    <div class="bg-grain" aria-hidden="true"></div>
+
+    <audio id="bg-audio" loop preload="none">
+      <source src="./assets/Мугалим эже.mp3" type="audio/mpeg" />
+    </audio>
+
+    <section id="intro-screen" class="intro-screen" aria-label="Киришүү">
+      <div class="intro-content">
+        <div class="intro-line"></div>
+        <h4 class="final-quote">
+            "ЖЕР БЕТИНДЕГИ ЭҢ АРДАКТУУ ЖАНА ЭҢ ТАЗА КЕСИП- БУЛ МУГАЛИМДИК КЕСИП"
+          </h4>
+        <p class="intro-subtitle">Майрамыңыздар менен урматтуу биздин сүйүктүү агай-эжелер!</p>
+        <button
+          id="open-invitation-btn"
+          class="intro-btn"
+          type="button"
+          aria-label="Чакырууну ачуу"
+        >
+          <span>ЧАКЫРУУНУ АЧУУ</span>
+        </button>
+      </div>
+    </section>
+
+    <header class="header">
+      <nav class="nav-container" aria-label="Башкы навигация">
+        <div class="nav-brand">МУГАЛИМГЕ ТААЗИМ</div>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#hero" class="nav-link">Башкы бет</a></li>
+          <li><a href="#about" class="nav-link">Агартуучуга таазим</a></li>
+          <li><a href="#poetry" class="nav-link">Саптар</a></li>
+          <li><a href="#countdown" class="nav-link">Убакыт</a></li>
+          <li><a href="#location" class="nav-link">Жайгашкан жери</a></li>
+        </ul>
+        <button
+          id="hamburger-btn"
+          class="hamburger"
+          aria-label="Менюну ачуу"
+          aria-expanded="false"
+          type="button"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </header>
+
+    <main id="main-content" class="main-content">
+      <section id="hero" class="hero-section reveal">
+        <div class="hero-content">
+          <div class="hero-badge">«МАНАС» ЖАТАК-МЕКТЕБИ</div>
+          <h1 class="hero-title">
+            <span> </span>
+            <span class="hero-title-sub"> </span>
+          </h1>
+          <p class="hero-quote">
+            <H1>Мугалим — билимдин шам чырагы,<P>келечекке жол көрсөткөн асыл инсан.</H1>
+          </p>
+          <div class="hero-meta">
+            <div class="hero-date"> </div>
+            <div class="hero-venue"></div>
+            <div class="hero-location"></div>
+          </div>
+          <div class="hero-divider"></div>
+        </div>
+
+        <a
+          href="#about"
+          class="scroll-indicator"
+          aria-label="Төмөнкүгө жылдырыңыз"
+        >
+          <span class="scroll-line"></span>
+          <span class="scroll-text">ТӨМӨНКҮГӨ ЖЫЛДЫРЫҢЫЗ</span>
+        </a>
+      </section>
+
+      <section id="about" class="about-section reveal">
+        <div class="section-container">
+          <div class="ornament-top" aria-hidden="true">
+            <svg
+              width="40"
+              height="40"
+              viewBox="0 0 40 40"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20 0L24.4903 15.5097L40 20L24.4903 24.4903L20 40L15.5097 24.4903L0 20L15.5097 15.5097L20 0Z"
+                fill="var(--muted-gold)"
+                opacity="0.4"
+              />
+            </svg>
+          </div>
+          <h2 class="section-title">МУГАЛИМГЕ ТААЗИМ</h2>
+          <div class="about-editorial-text">
+            <p class="editorial-line">
+              Мугалимдин эмгеги бир күн менен өлчөнбөйт.
+            </p>
+            <p class="editorial-line">Анын ар бир сабагында — таалим,</p>
+            <p class="editorial-line">ар бир сөзүндө — нарк,</p>
+            <p class="editorial-line">
+              ар бир эмгегинде — келечекке болгон үмүт бар.
+            </p>
+            <div class="editorial-space"></div>
+           
+            <p class="editorial-line">Ал окуучунун жетишкендигинде,</p>
+            <p class="editorial-line">жакшы адам болууга умтулуусунда,</p>
+            <p class="editorial-line">
+              өмүр бою сакталып калган сабактарында жашайт.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="photo" class="photo-section reveal">
+        <div class="section-container photo-container">
+          <div class="photo-frame-wrapper">
+            <div class="photo-frame">
+              <img
+                id="teacher-img"
+                src="./assets/Мугалимдер.jpeg"
+                alt="Мугалим"
+                loading="lazy"
+              />
+              <div id="photo-placeholder" class="photo-placeholder">
+                <span class="placeholder-icon">⚜</span>
+                <span class="placeholder-text">Мугалимдин сүрөтү</span>
+              </div>
+            </div>
+          </div>
+          <div class="photo-caption-side">
+            <div class="quote-mark"></div>
+            <p class="photo-caption-text">
+              <p class="editorial-line">
+              "Мугалим — адамдын жүрөгүнө билимдин үрөнүн сээп,
+            </p>
+            <p class="editorial-line">
+              келечекке ишеним менен кадам таштоого багыт берген инсан."
+            </p>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      
+               <section id="final-screen" class="final-section reveal">
+        <div class="final-glow" aria-hidden="true"></div>
+        <div class="section-container final-container">
+          <!-- Оживлённое фото учителей в золотой рамке -->
+<div class="teachers-photo-frame">
+    <video src="./assets/teachers.mp4" alt="Учителя лицея" class="teachers-gif">
+</div>
+         
+        
+          
+         
+          </button>
+        </div>
+      </section>
+
+      <section id="poetry" class="poetry-section reveal">
+        <div class="section-container">
+          <h2 class="section-title">
+            МУГАЛИМ ЭЖЕ-АГАЙЛАРГА АРНАЛГАН ЫР САПТАРЫ
+          </h2>
+          <div class="poetry-box">
+            <p class="poetry-line">Агарган таңда билим үрөнүн сээп,</p>
+            <p class="poetry-line">Үмүттүн асыл чырагын жагып келесиз.</p>
+            <p class="poetry-line">Дүйнөнүн сырын, турмуштун наркын үйрөтүп,</p>
+            <p class="poetry-line">Келечек көздөй ишеним менен жетелейсиз.</p>
+            <div class="poetry-break"></div>
+            <p class="poetry-line">Ар бир сөзүңүз — акылдын тунук башаты,</p>
+            <p class="poetry-line">Ар бир сабагыңыз — өмүрдүн аруу сапары.</p>
+            <p class="poetry-line">Таазим этебиз ак ниетиңизге түбөлүк,</p>
+            <p class="poetry-line">
+              Сизсиз — келечектин бийик, бекем пайдубалы.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="countdown" class="countdown-section reveal">
+        <div class="section-container">
+          <h2 class="section-title">САЛТАНАТКА ЧЕЙИН</h2>
+          <p class="section-subtitle">Күтүлгөн күнгө канча убакыт калды?</p>
+
+          <div id="countdown-grid" class="countdown-grid">
+            <div class="countdown-card">
+              <span id="cd-days" class="countdown-number">00</span>
+              <span class="countdown-label">КҮН</span>
+            </div>
+            <div class="countdown-card">
+              <span id="cd-hours" class="countdown-number">00</span>
+              <span class="countdown-label">СААТ</span>
+            </div>
+            <div class="countdown-card">
+              <span id="cd-minutes" class="countdown-number">00</span>
+              <span class="countdown-label">МҮНӨТ</span>
+            </div>
+            <div class="countdown-card">
+              <span id="cd-seconds" class="countdown-number">00</span>
+              <span class="countdown-label">СЕКУНД</span>
+            </div>
+          </div>
+          <div
+            id="countdown-started"
+            class="countdown-started-msg"
+            style="display: none"
+          >
+            САЛТАНАТ БАШТАЛДЫ
+          </div>
+        </div>
+      </section>
+
+      <section id="location" class="location-section reveal">
+        <div class="section-container">
+          <h2 class="section-title">БААРЫ БИР ЖЕРДЕ</h2>
+
+          <div class="info-cards-grid">
+            <div class="info-card">
+              <div class="info-card-header">КҮНҮ</div>
+              <div class="info-card-body">5-ОКТЯБРЬ 2026</div>
+            </div>
+            <div class="info-card">
+              <div class="info-card-header">УБАКТЫСЫ</div>
+              <div class="info-card-body">12:00</div>
+            </div>
+            <div class="info-card full-width-card">
+              <div class="info-card-header">ӨТКӨРҮЛӨ ТУРГАН ЖЕР</div>
+              <div class="info-card-body">«МАНАС» ЖАТАК-МЕКТЕБИ</div>
+              <div class="info-card-sub">Талас облусу,Бакай-Ата району</div>
+              <p class="final-welcome">Сиздерди чыдамсыздык менен күтөбүз!</p>
+            </div>
+          </div>
+
+          <div class="action-buttons-group">
+            <button id="map-btn" class="action-btn" type="button">
+              <span class="btn-icon">📍</span>
+              <span>ЖОЛДУ КӨРҮҮ</span>
+            </button>
+            <button id="calendar-btn" class="action-btn" type="button">
+              <span class="btn-icon">📅</span>
+              <span>КАЛЕНДАРГА КОШУУ</span>
+            </button>
+            <button
+              id="modal-open-btn"
+              class="action-btn gold-btn"
+              type="button"
+            >
+              <span class="btn-icon">✉</span>
+              <span>КУТТУКТОО</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="music-section" class="music-section reveal">
+        <div class="section-container">
+          <div class="music-panel">
+            <div class="music-info">
+              <div class="music-icon-title">
+                <span class="music-symbol">♫</span>
+                <span class="music-title">МУЗЫКА</span>
+              </div>
+              <div id="music-status-text" class="music-status">ТОКТОТУЛДУ</div>
+            </div>
+
+            <div class="music-visualizer" aria-hidden="true">
+              <div class="v-bar"></div>
+              <div class="v-bar"></div>
+              <div class="v-bar"></div>
+              <div class="v-bar"></div>
+              <div class="v-bar"></div>
+            </div>
+
+            <div class="music-controls-inline">
+              <button
+                id="music-play-pause-btn"
+                class="music-control-btn"
+                type="button"
+                aria-label="Музыканы ойнотуу/токтотуу"
+              >
+                ОЙНОТУУ
+              </button>
+              <div class="volume-slider-container">
+                <span class="vol-icon">🔊</span>
+                <input
+                  type="range"
+                  id="volume-slider"
+                  class="volume-slider"
+                  min="0"
+                  max="1"
+                  step="0.05"
+                  value="0.7"
+                  aria-label="Үн деңгээли"
+                />
+              </div>
+            </div>
+          </div>
+          <div
+            id="music-fallback-msg"
+            class="music-fallback-msg"
+            style="display: none"
+          >
+            Музыка файлы кошулган жок.
+          </div>
+        </div>
+      </section>
+
+      <section id="final-screen" class="final-section reveal">
+        <div class="final-glow" aria-hidden="true"></div>
+        <div class="section-container final-container">
+         
+        
+          
+          <button id="restart-btn" class="action-btn outline-btn" type="button">
+            <span>КАЙРА БАШТОО</span>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <button
+      id="floating-music-btn"
+      class="floating-music-btn"
+      aria-label="Музыка контролу"
+      type="button"
+    >
+      <span id="floating-music-icon">♫</span>
+      <div
+        id="floating-visualizer"
+        class="floating-visualizer"
+        aria-hidden="true"
+      >
+        <span class="fv-bar"></span>
+        <span class="fv-bar"></span>
+        <span class="fv-bar"></span>
+      </div>
+    </button>
+
+    <div
+      id="greeting-modal"
+      class="modal-backdrop"
+      aria-hidden="true"
+      role="dialog"
+      aria-labelledby="modal-title"
+    >
+      <div class="modal-card">
+        <button
+          id="modal-close-x"
+          class="modal-close-x"
+          aria-label="Жабуу"
+          type="button"
+        >
+          &times;
+        </button>
+        <div class="modal-header-ornament" aria-hidden="true">⚜</div>
+        <h2 id="modal-title" class="modal-title">УРМАТТУУ ЭЖЕ АГАЙЛАР !</h2>
+        <div class="modal-body-text">
+          <p>
+            Сиздердин ак ниет эмгегиңиздерге, сабырдуулугуңуздарга жана ар бир
+            окуучуга берген билимиңиздерге терең таазим билдиребиз.
+          </p>
+          <p>
+            Ар дайым ден соолукта болуп, эмгегиңиздердин үзүрүн
+            көрүп,окуучуларыңыздын ийгилигине күбө болуп жүрө бериңиздер.
+          </p>
+          <p>Сиздерге чын жүрөктөн ыраазычылык билдиребиз!</p>
+          <p class="modal-highlight">Эмгегиңиздерге таазим!</p>
+        </div>
+        <button id="modal-close-btn" class="action-btn gold-btn" type="button">
+          ЖАБУУ
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
